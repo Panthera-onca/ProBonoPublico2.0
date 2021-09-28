@@ -1,0 +1,149 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Vaadin application",
+    "version" : "0.0.1"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/connect",
+    "description" : "Vaadin backend"
+  } ],
+  "tags" : [ {
+    "name" : "AboutEndpoint",
+    "description" : "The endpoint for the client-side Dashboard View.",
+    "x-vaadin-file-path" : "C:\\Users\\nikol\\Documents\\my-app\\src\\main\\java\\com\\example\\application\\views\\about\\AboutEndpoint.java"
+  } ],
+  "paths" : {
+    "/AboutEndpoint/healthGridItems" : {
+      "post" : {
+        "tags" : [ "AboutEndpoint" ],
+        "operationId" : "AboutEndpoint_healthGridItems_POST",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "description" : "",
+                  "items" : {
+                    "$ref" : "#/components/schemas/com.example.application.views.about.HealthGridItem"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "vaadin-connect-oauth2" : [ ]
+        } ]
+      }
+    },
+    "/AboutEndpoint/monthlyVisitorsSeries" : {
+      "post" : {
+        "tags" : [ "AboutEndpoint" ],
+        "operationId" : "AboutEndpoint_monthlyVisitorsSeries_POST",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "description" : "",
+                  "items" : {
+                    "$ref" : "#/components/schemas/com.example.application.views.about.ChartSeries"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "vaadin-connect-oauth2" : [ ]
+        } ]
+      }
+    },
+    "/AboutEndpoint/responseTimesSeries" : {
+      "post" : {
+        "tags" : [ "AboutEndpoint" ],
+        "operationId" : "AboutEndpoint_responseTimesSeries_POST",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "description" : "",
+                  "items" : {
+                    "$ref" : "#/components/schemas/com.example.application.views.about.ChartSeries"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "vaadin-connect-oauth2" : [ ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "com.example.application.views.about.ChartSeries" : {
+        "required" : [ "data", "name" ],
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "description" : "Simple DTO class for chart data-series.",
+        "x-vaadin-file-path" : "C:\\Users\\nikol\\Documents\\my-app\\src\\main\\java\\com\\example\\application\\views\\about\\ChartSeries.java"
+      },
+      "com.example.application.views.about.HealthGridItem" : {
+        "required" : [ "city", "country", "date", "status", "theme" ],
+        "type" : "object",
+        "properties" : {
+          "city" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "theme" : {
+            "type" : "string"
+          }
+        },
+        "description" : "Simple DTO class for the inbox list to demonstrate complex object data",
+        "x-vaadin-file-path" : "C:\\Users\\nikol\\Documents\\my-app\\src\\main\\java\\com\\example\\application\\views\\about\\HealthGridItem.java"
+      }
+    },
+    "securitySchemes" : {
+      "vaadin-connect-oauth2" : {
+        "type" : "oauth2",
+        "flows" : {
+          "password" : {
+            "tokenUrl" : "/oauth/token",
+            "scopes" : { }
+          }
+        }
+      }
+    }
+  }
+}

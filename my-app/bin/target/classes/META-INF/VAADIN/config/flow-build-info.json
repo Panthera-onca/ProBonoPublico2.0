@@ -1,0 +1,15 @@
+{
+  "productionMode": false,
+  "useDeprecatedV14Bootstrapping": false,
+  "eagerServerLoad": false,
+  "npmFolder": "C:\\Users\\nikol\\Documents\\my-app",
+  "generatedFolder": "C:\\Users\\nikol\\Documents\\my-app\\target\\frontend",
+  "frontendFolder": "C:\\Users\\nikol\\Documents\\my-app\\frontend",
+  "connect.javaSourceFolder": "C:\\Users\\nikol\\Documents\\my-app\\src\\main\\java",
+  "connect.applicationProperties": "C:\\Users\\nikol\\Documents\\my-app\\src\\main\\resources\\application.properties",
+  "connect.openApiFile": "C:\\Users\\nikol\\Documents\\my-app\\target\\generated-resources\\openapi.json",
+  "project.frontend.generated": "C:\\Users\\nikol\\Documents\\my-app\\frontend\\generated",
+  "pnpm.enable": true,
+  "require.home.node": false,
+  "build.folder": "target"
+}
